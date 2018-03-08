@@ -1,6 +1,6 @@
 import pytest
-from group import Group
-from application import Application
+from model.group import Group
+from fixture.application import Application
 
 
 @pytest.fixture()
@@ -11,7 +11,7 @@ def app(request):
 
 
 def test_add_group(app):
-    app.Login(username="admin", password="secret")
+    app.session.Login(username="admin", password="secret")
     app.Create_new_group(Group(name="123", header="321", footer="195"))
-    app.Logout()
+    app.session.Logout()
 

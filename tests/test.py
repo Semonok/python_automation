@@ -1,5 +1,5 @@
 import pytest
-from application import Application
+from fixture.application import Application
 
 
 @pytest.fixture()
@@ -10,5 +10,5 @@ def app(request):
 
 
 def test_test(app):
-    app.Login(username="admin", password="secret")
-    app.Logout()
+    app.session.Login(username="admin", password="secret")
+    app.session.Logout()
