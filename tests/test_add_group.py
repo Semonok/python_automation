@@ -12,6 +12,6 @@ def app(request):
 
 def test_add_group(app):
     app.session.Login(username="admin", password="secret")
-    app.Create_new_group(Group(name="123", header="321", footer="195"))
+    app.group_managment.Create_new_group(Group(name="123", header="321", footer="195"))
     app.session.Logout()
 
