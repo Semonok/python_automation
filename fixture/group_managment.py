@@ -35,13 +35,14 @@ class GroupHelper:
 
     def delete_group(self):
         wd = self.application.wd
-        self.open_group()
-        self.select_first_group()
+        if wd.find_element_by_name("selected[]").is_selected() is False:
+            wd.find_element_by_name("selected[]").click()
         wd.find_element_by_name("delete").click()
         self.return_to_group()
 
     def select_first_group(self):
         wd = self.application.wd
+        self.open_group()
         wd.find_element_by_name("selected[]").click()
 
     def modify_first_group(self, Group):

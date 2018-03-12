@@ -1,1 +1,6 @@
-{}
+{
+  "test_del_group.py::test_add_group": true,
+  "test_modify_group.py::test_modify_group_footer": true,
+  "test_modify_group.py::test_modify_group_header": true,
+  "test_modify_group.py::test_modify_group_name": true
+}
