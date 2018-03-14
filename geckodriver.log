@@ -476,3 +476,147 @@ Unable to read VR Path Registry from C:\Users\Home\AppData\Local\openvr\openvrpa
 [Child 6432, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
 [Parent 5956, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1521052618590	geckodriver	INFO	geckodriver 0.19.1
+1521052618610	geckodriver	INFO	Listening on 127.0.0.1:57048
+1521052618969	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofile.PMyyrTLN8FBa"
+1521052626451	Marionette	INFO	Enabled via --marionette
+Unable to read VR Path Registry from C:\Users\Home\AppData\Local\openvr\openvrpaths.vrpath
+[Child 2444, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 2444, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1521052663298	Marionette	INFO	Listening on port 57053
+1521052664224	Marionette	WARN	TLS certificate errors will be ignored for this session
+Unable to read VR Path Registry from C:\Users\Home\AppData\Local\openvr\openvrpaths.vrpath
+[Parent 4468, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Unable to read VR Path Registry from C:\Users\Home\AppData\Local\openvr\openvrpaths.vrpath
+[Child 2336, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 2336, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 4468, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Unable to read VR Path Registry from C:\Users\Home\AppData\Local\openvr\openvrpaths.vrpath
+[Child 1404, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 1404, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1521052698765	geckodriver	INFO	geckodriver 0.19.1
+1521052698773	geckodriver	INFO	Listening on 127.0.0.1:57195
+1521052699338	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofile.HW2ew1fJjcpp"
+1521052701110	Marionette	INFO	Enabled via --marionette
+1521052704902	Marionette	INFO	Listening on port 57200
+1521052705047	Marionette	WARN	TLS certificate errors will be ignored for this session
+Unable to read VR Path Registry from C:\Users\Home\AppData\Local\openvr\openvrpaths.vrpath
+[Parent 4964, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1521053882352	geckodriver	INFO	geckodriver 0.19.1
+1521053882358	geckodriver	INFO	Listening on 127.0.0.1:57558
+1521053882892	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofile.0V4OusCnVmjc"
+1521053884667	Marionette	INFO	Enabled via --marionette
+Unable to read VR Path Registry from C:\Users\Home\AppData\Local\openvr\openvrpaths.vrpath
+[Parent 3396, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1521053892496	Marionette	INFO	Listening on port 57563
+1521053892801	Marionette	WARN	TLS certificate errors will be ignored for this session
+1521053947018	geckodriver	INFO	geckodriver 0.19.1
+1521053947024	geckodriver	INFO	Listening on 127.0.0.1:57628
+1521053947611	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofile.HT6iAYEroBQb"
+1521053949241	Marionette	INFO	Enabled via --marionette
+1521053953467	Marionette	INFO	Listening on port 57633
+1521053953836	Marionette	WARN	TLS certificate errors will be ignored for this session
+1521054064264	geckodriver	INFO	geckodriver 0.19.1
+1521054064270	geckodriver	INFO	Listening on 127.0.0.1:57693
+1521054064782	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofile.6PD9eGo2Bz4U"
+1521054066483	Marionette	INFO	Enabled via --marionette
+1521054070037	Marionette	INFO	Listening on port 57698
+1521054070493	Marionette	WARN	TLS certificate errors will be ignored for this session
+1521054899291	geckodriver	INFO	geckodriver 0.19.1
+1521054899298	geckodriver	INFO	Listening on 127.0.0.1:58407
+1521054899868	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofile.ta5WuOlNLVox"
+1521054901259	Marionette	INFO	Enabled via --marionette
+1521054905094	Marionette	INFO	Listening on port 58412
+1521054905573	Marionette	WARN	TLS certificate errors will be ignored for this session
+Unable to read VR Path Registry from C:\Users\Home\AppData\Local\openvr\openvrpaths.vrpath
+[Parent 5620, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Unable to read VR Path Registry from C:\Users\Home\AppData\Local\openvr\openvrpaths.vrpath
+[Child 5144, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1521055272853	geckodriver	INFO	geckodriver 0.19.1
+1521055272865	geckodriver	INFO	Listening on 127.0.0.1:58515
+1521055272917	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofile.xk5FiO8Mk9ty"
+1521055273981	Marionette	INFO	Enabled via --marionette
+1521055278328	Marionette	INFO	Listening on port 58520
+1521055278620	Marionette	WARN	TLS certificate errors will be ignored for this session
+Unable to read VR Path Registry from C:\Users\Home\AppData\Local\openvr\openvrpaths.vrpath
+[Parent 3364, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1521055352130	geckodriver	INFO	geckodriver 0.19.1
+1521055352136	geckodriver	INFO	Listening on 127.0.0.1:58614
+1521055352687	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofile.bUHJQBxMYZuE"
+1521055354404	Marionette	INFO	Enabled via --marionette
+1521055357916	Marionette	INFO	Listening on port 58619
+1521055358406	Marionette	WARN	TLS certificate errors will be ignored for this session
+Unable to read VR Path Registry from C:\Users\Home\AppData\Local\openvr\openvrpaths.vrpath
+[Parent 5472, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Unable to read VR Path Registry from C:\Users\Home\AppData\Local\openvr\openvrpaths.vrpath
+[Child 4932, Chrome_ChildThread] WARNING: pipe error: 232: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 513
+1521055432743	geckodriver	INFO	geckodriver 0.19.1
+1521055432750	geckodriver	INFO	Listening on 127.0.0.1:58718
+1521055433306	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofile.Lxf93sm90fGn"
+1521055435014	Marionette	INFO	Enabled via --marionette
+1521055438771	Marionette	INFO	Listening on port 58723
+1521055439025	Marionette	WARN	TLS certificate errors will be ignored for this session
+1521055659208	geckodriver	INFO	geckodriver 0.19.1
+1521055659215	geckodriver	INFO	Listening on 127.0.0.1:58880
+1521055659729	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofile.Wnjfwy7fv96b"
+1521055661284	Marionette	INFO	Enabled via --marionette
+1521055663832	Marionette	INFO	Listening on port 58885
+1521055663857	Marionette	WARN	TLS certificate errors will be ignored for this session
+1521055689005	geckodriver	INFO	geckodriver 0.19.1
+1521055689011	geckodriver	INFO	Listening on 127.0.0.1:58983
+1521055689570	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofile.kmBSj6UaFqdW"
+1521055690957	Marionette	INFO	Enabled via --marionette
+1521055693938	Marionette	INFO	Listening on port 58988
+1521055694448	Marionette	WARN	TLS certificate errors will be ignored for this session
+1521055705562	geckodriver	INFO	geckodriver 0.19.1
+1521055705568	geckodriver	INFO	Listening on 127.0.0.1:59040
+1521055706148	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofile.fKkPk228iltg"
+1521055707929	Marionette	INFO	Enabled via --marionette
+1521055711016	Marionette	INFO	Listening on port 59045
+1521055711358	Marionette	WARN	TLS certificate errors will be ignored for this session
+1521057607307	geckodriver	INFO	geckodriver 0.19.1
+1521057607315	geckodriver	INFO	Listening on 127.0.0.1:59778
+1521057607910	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofile.XuvKZg1Yhzrt"
+1521057609548	Marionette	INFO	Enabled via --marionette
+1521057612586	Marionette	INFO	Listening on port 59783
+1521057612660	Marionette	WARN	TLS certificate errors will be ignored for this session
+1521058011966	geckodriver	INFO	geckodriver 0.19.1
+1521058011973	geckodriver	INFO	Listening on 127.0.0.1:60136
+1521058012522	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofile.jzxkh2lXFRq0"
+1521058013866	Marionette	INFO	Enabled via --marionette
+1521058017642	Marionette	INFO	Listening on port 60142
+1521058017755	Marionette	WARN	TLS certificate errors will be ignored for this session
+1521058202070	geckodriver	INFO	geckodriver 0.19.1
+1521058202080	geckodriver	INFO	Listening on 127.0.0.1:60235
+1521058202520	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofile.Rcmn72fXoCPO"
+1521058204343	Marionette	INFO	Enabled via --marionette
+1521058337622	geckodriver	INFO	geckodriver 0.19.1
+1521058337628	geckodriver	INFO	Listening on 127.0.0.1:60585
+1521058338175	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofile.8qEPOUZgaDQp"
+1521058339459	Marionette	INFO	Enabled via --marionette
+1521058343338	Marionette	INFO	Listening on port 60590
+1521058343490	Marionette	WARN	TLS certificate errors will be ignored for this session
+Unable to read VR Path Registry from C:\Users\Home\AppData\Local\openvr\openvrpaths.vrpath
+[Parent 5108, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1521058422814	geckodriver	INFO	geckodriver 0.19.1
+1521058422820	geckodriver	INFO	Listening on 127.0.0.1:60861
+1521058423400	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofile.0Hc6ummWXQIV"
+1521058424458	Marionette	INFO	Enabled via --marionette
+1521058428726	Marionette	INFO	Listening on port 60866
+1521058429889	Marionette	WARN	TLS certificate errors will be ignored for this session
+1521058749127	geckodriver	INFO	geckodriver 0.19.1
+1521058749133	geckodriver	INFO	Listening on 127.0.0.1:61152
+1521058749701	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofile.8sMPwfQb2Kyn"
+1521058750926	Marionette	INFO	Enabled via --marionette
+1521058754661	Marionette	INFO	Listening on port 61157
+1521058754951	Marionette	WARN	TLS certificate errors will be ignored for this session
+Unable to read VR Path Registry from C:\Users\Home\AppData\Local\openvr\openvrpaths.vrpath
+[Child 4780, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1521058942607	geckodriver	INFO	geckodriver 0.19.1
+1521058942614	geckodriver	INFO	Listening on 127.0.0.1:61283
+1521058943158	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\Home\\AppData\\Local\\Temp\\rust_mozprofile.Ec3hTET2GV40"
+1521058944730	Marionette	INFO	Enabled via --marionette
+1521058948551	Marionette	INFO	Listening on port 61288
+1521058948977	Marionette	WARN	TLS certificate errors will be ignored for this session
+Unable to read VR Path Registry from C:\Users\Home\AppData\Local\openvr\openvrpaths.vrpath
+[Child 212, Chrome_ChildThread] WARNING: pipe error: 232: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 513
