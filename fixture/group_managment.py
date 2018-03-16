@@ -70,7 +70,7 @@ class GroupHelper:
         groups_m = []  # создаем массив для групп
         for element in wd.find_elements_by_css_selector('span.group'):  # перебираем группы в списке групп
             g_name = element.text  # название группы, можно ещё "element.get_attribute('text')"
-            id_i = element.get_attribute('value')  # id группы
+            id_i = element.find_element_by_name("selected[]").get_attribute('value')  # id группы
             groups_m.append(Group(name=g_name, id=id_i))  # добавляем в ранее созданный массив
         return groups_m  # возвращаем полученный массив
 
