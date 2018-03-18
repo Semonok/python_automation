@@ -7,5 +7,6 @@ def test_add_group(app):
     app.group_managment.Create_new_group(group)
     new_groups = app.group_managment.get_group_list()  # длина группы после добавления
     assert len(old_groups) + 1 == len(new_groups)
-    old_groups.append(group)
-    assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
+    # Создаем проверку элементов группы
+    old_groups.append(group)  # Добавляем в старый список групп, новую группу (это нужно только для проверки)
+    assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)  # Сортируем по ключу при сравнении

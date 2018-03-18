@@ -1,6 +1,7 @@
 from model.group import Group
 from selenium.common.exceptions import NoSuchElementException
 
+
 class GroupHelper:
 
     def __init__(self, applic):
@@ -23,6 +24,7 @@ class GroupHelper:
         # Submit group creation
         wd.find_element_by_name("submit").click()
         self.return_to_group()
+        self.group_cache = None
 
     def fill_group_form(self, group):
         self.change_field_value("group_name", group.name)
@@ -36,21 +38,22 @@ class GroupHelper:
             wd.find_element_by_name(field_name).clear()
             wd.find_element_by_name(field_name).send_keys(text_name)
 
-    def delete_group(self):
+    def delete_group(self, index):
         wd = self.application.wd
-        self.check_selected_group()
+        self.select_first_group(index)
         wd.find_element_by_name("delete").click()
         self.return_to_group()
+        self.group_cache = None
 
     def check_selected_group(self):
         wd = self.application.wd
         if wd.find_element_by_name("selected[]").is_selected() is False:
             wd.find_element_by_name("selected[]").click()
 
-    def select_first_group(self):
+    def select_first_group(self, index):
         wd = self.application.wd
         self.open_group()
-        wd.find_element_by_name("selected[]").click()
+        wd.find_elements_by_name("selected[]")[index].click()
 
     def modify_first_group(self, Group):
         wd = self.application.wd
@@ -59,18 +62,33 @@ class GroupHelper:
         self.fill_group_form(Group)
         wd.find_element_by_name("update").click()
         self.return_to_group()
+        self.group_cache = None
 
-# Проверка на соответствие количества групп до и после действия (скрипта)
+    group_cache = None  # создаем переменную, в которую будет записываться текущее кол-во групп (кэш групп)
+
+    # Проверка на соответствие количества групп до и после действия (скрипта)
     def get_group_list(self):
-        wd = self.application.wd
+        if self.group_cache is None:  # проверка на наличие записей в массиве с группами
+            wd = self.application.wd
+            #  Проверка на нахождение на странице с группами
+            try:
+                wd.find_element_by_name("new")
+            except NoSuchElementException:
+                self.open_group()
+            # Создание массива со списком групп
+            self.group_cache = []  # создаем массив для групп
+            for element in wd.find_elements_by_css_selector('span.group'):  # перебираем группы в списке групп
+                g_name = element.text  # название группы, можно ещё "element.get_attribute('text')"
+                id_i = element.find_element_by_name("selected[]").get_attribute('value')  # id группы
+                self.group_cache.append(Group(name=g_name, id=id_i))  # добавляем в ранее созданный массив
+        return list(self.group_cache)  # возвращаем копию кэша
+
+    def check(self):
         try:
-            wd.find_element_by_name("new")
-        except NoSuchElementException:
+            wd = self.application.wd
             self.open_group()
-        groups_m = []  # создаем массив для групп
-        for element in wd.find_elements_by_css_selector('span.group'):  # перебираем группы в списке групп
-            g_name = element.text  # название группы, можно ещё "element.get_attribute('text')"
-            id_i = element.find_element_by_name("selected[]").get_attribute('value')  # id группы
-            groups_m.append(Group(name=g_name, id=id_i))  # добавляем в ранее созданный массив
-        return groups_m  # возвращаем полученный массив
+            wd.find_element_by_name("selected[]")
+            return True
+        except NoSuchElementException:
+            return False
 
