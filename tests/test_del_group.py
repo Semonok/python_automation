@@ -1,19 +1,15 @@
-from selenium.common.exceptions import NoSuchElementException
 from model.group import Group
+from random import randrange
 
 
 def test_del_group(app):
-    try:
-        app.group_managment.select_first_group()
-    except NoSuchElementException:
-        app.group_managment.Create_new_group(Group(name="123", header="321", footer="195"))
-    finally:
-        old_groups = app.group_managment.get_group_list()  # длина группы до удаления
-        app.group_managment.delete_group()
-        new_groups = app.group_managment.get_group_list()  # длина группы после удаления
-        assert len(old_groups) - 1 == len(new_groups)
-        old_groups[0:1] = []
-        assert old_groups == new_groups
-
-
-
+    if app.group_managment.check() is False:
+        app.group_managment.Create_new_group(Group(name="12345"))
+    old_groups = app.group_managment.get_group_list()  # длина группы до удаления
+    index = randrange(len(old_groups))
+    app.group_managment.delete_group(index)
+    new_groups = app.group_managment.get_group_list()  # длина группы после удаления
+    assert len(old_groups) - 1 == len(new_groups)
+    # Создаем проверку элементов группы
+    del old_groups[index]
+    assert old_groups == new_groups
