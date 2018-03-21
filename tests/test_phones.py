@@ -4,19 +4,13 @@ import re
 def test_phones_on_page_and_edit(app):
     contact_from_home_page = app.contact_managment.get_contact_list()[0]
     contact_from_edit_page = app.contact_managment.get_contact_info_from_edit_page(0)
-    assert contact_from_home_page.homephone == clear(contact_from_edit_page.homephone)
-    assert contact_from_home_page.workphone == clear(contact_from_edit_page.workphone)
-    assert contact_from_home_page.mobilephone == clear(contact_from_edit_page.mobilephone)
-    assert contact_from_home_page.secondaryphone == clear(contact_from_edit_page.secondaryphone)
+    assert contact_from_home_page.all_phones_from_homepage == merge_phones_like_on_home_page(contact_from_edit_page)
 
-    
+
 def test_phones_on_page_and_view(app):
     contact_from_home_page = app.contact_managment.get_contact_list()[0]
     contact_from_view_page = app.contact_managment.get_contact_info_from_view_page(0)
-    assert contact_from_home_page.homephone == clear(contact_from_view_page.homephone)
-    assert contact_from_home_page.workphone == clear(contact_from_view_page.workphone)
-    assert contact_from_home_page.mobilephone == clear(contact_from_view_page.mobilephone)
-    assert contact_from_home_page.secondaryphone == clear(contact_from_view_page.secondaryphone)
+    assert contact_from_home_page.all_phones_from_homepage == merge_phones_like_on_home_page(contact_from_view_page)
 
 
 def test_phones_on_page_view_and_edit(app):
@@ -30,3 +24,11 @@ def test_phones_on_page_view_and_edit(app):
 
 def clear(s):
     return re.sub('[() -]', '', s)
+
+
+def merge_phones_like_on_home_page(contact):
+    return '\n'.join(filter(lambda y: y != '',
+        map(lambda x: clear(x),
+            filter(lambda z: z is not None,
+                    [contact.homephone, contact.mobilephone, contact.workphone, contact.secondaryphone]))))
+

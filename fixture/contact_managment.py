@@ -6,6 +6,24 @@ class ContactHelper:
     def __init__(self, app):
         self.app = app
 
+    def add_contact(self, contact):
+        wd = self.app.wd
+        self.app.open_home_page()
+        wd.find_element_by_link_text("add new").click()
+        self.fill_contact_form(contact)
+        wd.find_element_by_name("submit").click()
+        wd.find_element_by_link_text("home").click()
+        self.contact_cache = None
+
+        # Метод заполнения полей при создании контакта
+    def fill_contact_form(self, contact):
+        self.change_field_value("firstname", contact.firstname)
+        self.change_field_value("lastname", contact.lastname)
+        self.change_field_value("mobile", contact.mobilephone)
+        self.change_field_value("home", contact.homephone)
+        self.change_field_value("work", contact.workphone)
+        self.change_field_value("phone2", contact.secondaryphone)
+
     # Для выборочного заполнения полей контакта:
     # (если при вызове метода 'contact' определяем значения атрибута, тогда заполняем)
     def change_field_value(self, field_name, text_name):
@@ -26,13 +44,12 @@ class ContactHelper:
             self.contact_cache = []  # создаем массив для контактов
             for element in wd.find_elements_by_name('entry'):  # перебираем контакты в списке контактов
                 cell = element.find_elements_by_tag_name("td")
-                name = cell[1].text  # имя контакта
-                last = cell[2].text  # фамилия контакта
-                id_i = cell[0].find_element_by_tag_name("input").get_attribute('value')  # id контакта
-                all_phones = cell[5].text.splitlines()
-                self.contact_cache.append(Contact(firstname=name, lastname=last, id=id_i,
-                                                  homephone=all_phones[0], mobilephone=all_phones[1],
-                                                  workphone=all_phones[2], secondaryphone=all_phones[3]))  # добавляем в ранее созданный массив
+                last = cell[1].text  # имя контакта
+                name = cell[2].text  # фамилия контакта
+                id = cell[0].find_element_by_tag_name("input").get_attribute('value')  # id контакта
+                all_phones = cell[5].text
+                self.contact_cache.append(Contact(firstname=name, lastname=last, id=id,
+                                                  all_phones_from_homepage=all_phones))  # добавляем в ранее созданный массив
         return list(self.contact_cache)  # возвращаем копию кэша
 
     def get_contact_info_from_edit_page(self, index):
