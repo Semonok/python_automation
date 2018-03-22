@@ -1,8 +1,21 @@
 from model.group import Group
+import pytest
+import random
+import string
+
+def random_string(maxlen):
+    symbols = string.digits + string.ascii_letters + string.punctuation + ' '
+    return ''.join([random.choice(symbols) for i in range(random.randrange(maxlen))])
+
+testdata = [
+    Group(name=name, header=header, footer=footer)
+    for name in ['', random_string(10)]
+    for header in ['', random_string(10)]
+    for footer in ['', random_string(10)]]
 
 
-def test_add_group(app):
-    group = Group(name="1", header="321", footer="195")  # создадим локальную перменную для удобства
+@pytest.mark.parametrize("group", testdata, ids=[repr(x) for x in testdata])
+def test_add_group(app, group):
     old_groups = app.group_managment.get_group_list()  # длина группы до добавления
     app.group_managment.Create_new_group(group)  # добавляем группу
     new_groups = app.group_managment.get_group_list()  # длина группы после добавления
