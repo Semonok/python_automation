@@ -3,9 +3,11 @@ import pytest
 import random
 import string
 
+
 def random_string(maxlen):
     symbols = string.digits + string.ascii_letters + string.punctuation + ' '
     return ''.join([random.choice(symbols) for i in range(random.randrange(maxlen))])
+
 
 testdata = [
     Group(name=name, header=header, footer=footer)
