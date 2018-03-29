@@ -1,13 +1,12 @@
 from model.group import Group
 from random import randrange
 
-
-def test_modify_group_name(app):
+def test_modify_group_name(app, data_group_data):
     if app.group_managment.check() is False:  # Проверяем есть ли хоть одна группа
         app.group_managment.Create_new_group(Group(name="12345"))  # Если нет, добавляем
     old_groups = app.group_managment.get_group_list()  # длина группы до изменений
     index = randrange(len(old_groups))  # Создаем переменную с рандомным значением в пределах кол-ва групп
-    group = Group(name="Bomb")  # Создаем локальную перемнную для удобства
+    group = data_group_data  # Создаем локальную перемнную для удобства
     group.id = old_groups[index].id  # id группы после изменения равен id изменяемой группы
     app.group_managment.modify_group(group, index)  # модифицируем группу с индексом, обявленным ранее
     new_groups = app.group_managment.get_group_list()  # длина группы после изменений

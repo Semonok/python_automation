@@ -1,1 +1,6 @@
-{}
+{
+  "tests/test_modify_group.py::test_modify_group_name[None:Gor\\\\; ; ]": true,
+  "tests/test_modify_group.py::test_modify_group_name[None:Gor\\\\; ; skh0]": true,
+  "tests/test_modify_group.py::test_modify_group_name[None:Gor\\\\; wSCDDd; ]": true,
+  "tests/test_modify_group.py::test_modify_group_name[None:Gor\\\\; wSCDDd; h*wK]": true
+}
