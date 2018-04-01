@@ -7,9 +7,9 @@ connection = mysql.connector.connect(host="127.0.0.1", database="addressbook", u
 try:
     var = connection.cursor()
     var.execute("select * from group_list")
-    for raw in var:
+    for raw in var.fetchall():
         arr = []
         arr.append(Group(id=str(raw[1]), name=raw[6], header=raw[7], footer=raw[8]))
-    print(arr)
+        print(arr)
 finally:
     connection.close()

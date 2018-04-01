@@ -16,8 +16,7 @@ class Dbfixture:
         cursor = self.connection.cursor()
         cursor.execute("select group_id, group_name, group_header, group_footer from group_list")
         for row in cursor.fetchall():
-            (id, name, header, footer) = row
-            arr.append(Group(id=str(id), name=name, header=header, footer=footer)) # это индексы id,name,header,footer)
+            arr.append(Group(id=str(row[0]), name=row[1], header=row[2], footer=row[3])) # это индексы id,name,header,footer)
         return arr
 
 
