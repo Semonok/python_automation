@@ -4,21 +4,28 @@ import os.path
 import importlib
 import jsonpickle
 from fixture.application import Application
+from fixture.db import Dbfixture
 
 fixture = None
 target = None
 
+
+def load_config(file):
+    global target
+    if target is None:
+        path_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), file)
+        with open(path_file) as config_file:
+            target = json.load(config_file)
+    return target
+
+
 @pytest.fixture(scope="session")
 def app(request):
     global fixture
-    global target
-    path_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), request.config.getoption('--target'))
-    if target is None:
-        with open(path_file) as config_file:
-            target = json.load(config_file)
+    web_config = load_config(request.config.getoption('--target'))["web"]
     if fixture is None or not fixture.is_valid():
-        fixture = Application(browser=target["browser"], base_url=target["baseUrl"])
-    fixture.session.login(username=target["username"], password=target["password"])
+        fixture = Application(browser=web_config["browser"], base_url=web_config["baseUrl"])
+    fixture.session.login(username=web_config["username"], password=web_config["password"])
     return fixture
 
 
@@ -30,19 +37,30 @@ def stop(request):
     request.addfinalizer(fin)
     return fixture
 
+@pytest.fixture(scope="session")
+def db(request):
+    db_config = load_config(request.config.getoption('--target'))["db"]
+    dbfixture = Dbfixture(host=db_config["host"], database=db_config["database"], user=db_config["user"], password=db_config["password"])
+    def final():
+        dbfixture.destroy()
+    request.addfinalizer(final)
+    return dbfixture
+
+
+
 
 def pytest_addoption(parser):
     parser.addoption('--target', action='store', default='target.json')
 
 
-def pytest_generate_tests(metafunc):
-    for fixture in metafunc.fixturenames:
-        if fixture.startswith("data_"):
-            testdata = load_from_module(fixture[5:])
-            metafunc.parametrize(fixture, testdata, ids=[repr(x) for x in testdata])
-        elif fixture.startswith("json_"):
-            testdata = load_from_json(fixture[5:])
-            metafunc.parametrize(fixture, testdata, ids=[repr(x) for x in testdata])
+def pytest_generate_tests(metafunc):  # фикстура для связки данных для групп с тестами
+    for fixture in metafunc.fixturenames:  # цикл для поиска фикстур
+        if fixture.startswith("group_data"):  # если начинается с "group_data"
+            testdata = load_from_module(fixture)  # загружаем в переменную тестовые данные
+            metafunc.parametrize(fixture, testdata, ids=[repr(x) for x in testdata])  # параметризуем
+        elif fixture.startswith("groups"):  # аналогично предыдущему, только для json файла
+            data = load_from_json(fixture)
+            metafunc.parametrize(fixture, data, ids=[repr(x) for x in data])
 
 
 def load_from_module(module):
