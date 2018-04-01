@@ -1,8 +1,8 @@
 from model.group import Group
 
 
-def test_add_group(app, json_groups):
-    group = json_groups
+def test_add_group(app, groups):
+    group = groups
     old_groups = app.group_managment.get_group_list()  # длина группы до добавления
     app.group_managment.Create_new_group(group)  # добавляем группу
     new_groups = app.group_managment.get_group_list()  # длина группы после добавления
