@@ -5,21 +5,21 @@ from selenium.common.exceptions import NoSuchElementException
 class GroupHelper:
 
     def __init__(self, applic):
-        self.application = applic
+        self.applic = applic
 
     # Метод открытия страницы с группами
     def open_group(self):
-        wd = self.application.wd
+        wd = self.applic.wd
         wd.find_element_by_link_text("groups").click()
 
     # Метод возврата на страницу с группами
     def return_to_group(self):
-        wd = self.application.wd
+        wd = self.applic.wd
         wd.find_element_by_link_text("group page").click()
 
     # Метод создания группы
     def Create_new_group(self, group):
-        wd = self.application.wd
+        wd = self.applic.wd
         # Init group creation
         self.open_group()
         wd.find_element_by_name("new").click()
@@ -37,7 +37,7 @@ class GroupHelper:
 
     # Для выборочного заполнения полей гр.(если при вызове метода 'group' определяем значения атрибута, тогла заполняем)
     def change_field_value(self, field_name, text_name):
-        wd = self.application.wd
+        wd = self.applic.wd
         if text_name is not None:
             wd.find_element_by_name(field_name).click()
             wd.find_element_by_name(field_name).clear()
@@ -45,7 +45,7 @@ class GroupHelper:
 
     # Метод удаления группы
     def delete_group(self, index):
-        wd = self.application.wd
+        wd = self.applic.wd
         self.select_group(index)
         wd.find_element_by_name("delete").click()
         self.return_to_group()
@@ -53,13 +53,13 @@ class GroupHelper:
 
     # Метод выбора группы
     def select_group(self, index):
-        wd = self.application.wd
+        wd = self.applic.wd
         self.open_group()
         wd.find_elements_by_name("selected[]")[index].click()
 
     # Метод модификации группы
     def modify_group(self, Group, index):
-        wd = self.application.wd
+        wd = self.applic.wd
         self.select_group(index)
         wd.find_element_by_name("edit").click()
         self.fill_group_form(Group)
@@ -72,7 +72,7 @@ class GroupHelper:
     # Создание списка групп (для проверок колчиства групп до и после операциий с ними)
     def get_group_list(self):
         if self.group_cache is None:  # проверка на наличие записей в массиве с группами
-            wd = self.application.wd
+            wd = self.applic.wd
             #  Проверка на нахождение на странице с группами
             try:
                 wd.find_element_by_name("new")
@@ -89,7 +89,7 @@ class GroupHelper:
     # Проверка наличия групп в списке групп
     def check(self):
         try:
-            wd = self.application.wd
+            wd = self.applic.wd
             self.open_group()
             wd.find_element_by_name("selected[]")
             return True

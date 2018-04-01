@@ -2,6 +2,7 @@
   "test_add_contact.py::test_add_contact_pro": true,
   "test_add_group.py::test_add_group": true,
   "test_add_group.py::test_add_group[None:; ; <model.data_generator.Data object at 0x033609F0>]": true,
+  "test_add_group.py::test_add_group[None:; ; q\\\\7x'Y6]": true,
   "test_add_group.py::test_add_group[None:; <model.data_generator.Data object at 0x03360310>; <model.data_generator.Data object at 0x03360990>]": true,
   "test_add_group.py::test_add_group[None:; <model.data_generator.Data object at 0x03360310>; ]": true,
   "test_add_group.py::test_add_group[None:<model.data_generator.Data object at 0x03360950>; ; <model.data_generator.Data object at 0x03360AF0>]": true,
