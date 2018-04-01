@@ -1,6 +1,17 @@
 {
-  "username":"admin",
-  "password":"secret",
-  "baseUrl":"http://localhost/addressbook/",
-  "browser":"chrome"
+  "web":
+  {
+    "username":"admin",
+    "password":"secret",
+    "baseUrl":"http://localhost/addressbook/",
+    "browser":"chrome"
+  }
+  ,
+  "db":
+  {
+    "host":"localhost",
+    "database":"addressbook",
+    "user":"root",
+    "password":""
+  }
 }
