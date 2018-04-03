@@ -10,6 +10,7 @@ class Dbfixture:
         self.user = user
         self.password = password
         self.connection = mysql.connector.connect(host=host, database=database, user=user, password=password)
+        self.connection.autocommit = True
 
     def get_group_list(self):
         arr = []

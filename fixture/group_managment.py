@@ -51,16 +51,39 @@ class GroupHelper:
         self.return_to_group()
         self.group_cache = None
 
+    # Метод удаления группы по id
+    def delete_group_by_id(self, id):
+        wd = self.applic.wd
+        self.select_group_by_id(id)
+        wd.find_element_by_name("delete").click()
+        self.return_to_group()
+        self.group_cache = None
+
     # Метод выбора группы
     def select_group(self, index):
         wd = self.applic.wd
         self.open_group()
         wd.find_elements_by_name("selected[]")[index].click()
 
+    # Метод выбора группы по id
+    def select_group_by_id(self, id):
+        wd = self.applic.wd
+        self.open_group()
+        wd.find_element_by_css_selector("input[value='%s']" % id).click()
+
     # Метод модификации группы
     def modify_group(self, Group, index):
         wd = self.applic.wd
         self.select_group(index)
+        wd.find_element_by_name("edit").click()
+        self.fill_group_form(Group)
+        wd.find_element_by_name("update").click()
+        self.return_to_group()
+        self.group_cache = None
+
+    def modify_group_by_id(self, Group, id):
+        wd = self.applic.wd
+        self.select_group_by_id(id)
         wd.find_element_by_name("edit").click()
         self.fill_group_form(Group)
         wd.find_element_by_name("update").click()

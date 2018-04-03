@@ -1,5 +1,6 @@
 from model.group import Group
 
+
 def test_matches_db_and_ui(app, db):
     groups_ui = app.group_managment.get_group_list()
     def clean(group):

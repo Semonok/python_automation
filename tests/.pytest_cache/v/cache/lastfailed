@@ -9,6 +9,8 @@
   "test_add_group.py::test_add_group[None:<model.data_generator.Data object at 0x03360950>; ; ]": true,
   "test_add_group.py::test_add_group[None:<model.data_generator.Data object at 0x03360950>; <model.data_generator.Data object at 0x03360970>; <model.data_generator.Data object at 0x03360C90>]": true,
   "test_add_group.py::test_add_group[None:<model.data_generator.Data object at 0x03360950>; <model.data_generator.Data object at 0x03360970>; ]": true,
+  "test_add_group.py::test_add_group[None:dK(}<l,=+; ; ]": true,
+  "test_db_matches_ui.py::test_matches_db_and_ui": true,
   "test_del_group.py::test_add_group": true,
   "test_modify_group.py::test_modify_group_footer": true,
   "test_modify_group.py::test_modify_group_full": true,
