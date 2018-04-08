@@ -119,3 +119,15 @@ class GroupHelper:
         except NoSuchElementException:
             return False
 
+    def add_c_in_group(self):
+        wd = self.applic.wd
+        wd.find_element_by_name("to_group").click()
+        wd.find_element_by_xpath('//div[@id="content"]/form[2]/div[@class="right"]/select/option[3]').click()
+        wd.find_element_by_css_selector("input[value='15']").click()
+        wd.find_element_by_css_selector("input[value='Add to']").click()
+        wd.find_element_by_link_text('group page ""').click()
+
+
+
+
+

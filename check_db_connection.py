@@ -1,15 +1,16 @@
 import mysql.connector
+from fixture.orm import ORMFixture
 from model.group import Group
 
 
-connection = mysql.connector.connect(host="127.0.0.1", database="addressbook", user="root", password="")
-
+#def check_contact_in_group():
+db = ORMFixture(host="127.0.0.1", database="addressbook", user="root", password="")
+massive = []
 try:
-    var = connection.cursor()
-    var.execute("select * from group_list")
-    for raw in var.fetchall():
-        arr = []
-        arr.append(Group(id=str(raw[1]), name=raw[6], header=raw[7], footer=raw[8]))
-        print(arr)
+    L = db.get_contacts_in_group(Group(id='165'))
+    for i in L:
+        massive.append(i)
+    print(massive)
+    print(len(L))
 finally:
-    connection.close()
+   pass #db.destroy()

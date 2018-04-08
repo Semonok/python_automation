@@ -2,7 +2,7 @@ from model.group import Group
 import random
 
 
-def test_del_group(app, db):
+def test_del_group(app, db, check_ui):
     if len(db.get_group_list()) == 0:  # Проверяем есть ли хоть одна группа
         app.group_managment.Create_new_group(Group(name="12345"))  # Если нет, добавляем
     old_groups = db.get_group_list()  # длина группы до удаления
@@ -12,3 +12,5 @@ def test_del_group(app, db):
     # Создаем проверку элементов группы
     old_groups.remove(group)
     assert old_groups == new_groups
+    if check_ui:
+        assert sorted(new_groups, key=Group.id_or_max) == sorted(app.group_managment.get_group_list(), key=Group.id_or_max)
